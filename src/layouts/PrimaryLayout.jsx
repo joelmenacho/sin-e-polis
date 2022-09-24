@@ -1,9 +1,10 @@
 import { Outlet } from "react-router-dom";
+import Header from "../components/sections/Header";
 
 const PrimaryLayout = () => {
   return (
     <>
-      <header>Sin E Spoiler</header>
+      <Header />
       <main>
         <Outlet />
       </main>
@@ -11,19 +12,5 @@ const PrimaryLayout = () => {
     </>
   );
 };
+
 export default PrimaryLayout;
-
-// import { Outlet } from "react-router-dom";
-
-// const PrimaryLayout = () => {
-//   return (
-//     <>
-//       <header>Sin E Spoiler</header>
-//       <main>
-//         <Outlet />
-//       </main>
-//       <footer>Eliot Garamendi</footer>
-//     </>
-//   );
-// };
-// export default PrimaryLayout;

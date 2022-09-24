@@ -1,0 +1,30 @@
+.section {
+  padding-top: var(--padding-section);
+  padding-bottom: var(--padding-section);
+  box-sizing: border-box;
+
+  &--hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--secondary-shadow-color);
+  }
+}
+
+.container {
+  max-width: var(--max-width-container);
+  margin: 0 auto;
+  padding-left: var(--padding-container);
+  padding-right: var(--padding-container);
+}
+
+.elements {
+  display: flex;
+
+  &--header-nav {
+    align-items: center;
+    justify-content: space-between;
+  }
+}
