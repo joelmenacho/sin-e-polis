@@ -9,6 +9,7 @@ export const MoviesProvider = ({ children }) => {
 
   const readMovies = async () => {
     try {
+      console.log(process.env.REACT_APP_TMDB_IMAGE_BASE);
       const options = {
         method: 'GET',
         url: '/discover/movie?page=1'
