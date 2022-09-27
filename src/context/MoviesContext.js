@@ -5,11 +5,11 @@ export const MoviesContext = createContext();
 
 export const MoviesProvider = ({ children }) => {
 
+  const [movie, setMovie] = useState({});
   const [movies, setMovies] = useState([]);
 
   const readMovies = async () => {
     try {
-      console.log(process.env.REACT_APP_TMDB_IMAGE_BASE);
       const options = {
         method: 'GET',
         url: '/discover/movie?page=1'
@@ -21,11 +21,26 @@ export const MoviesProvider = ({ children }) => {
     }
   };
 
+  const readMovie = async (id) => {
+    try {
+      const options = {
+        method: 'GET',
+        url: `/movie/${id}`
+      };
+      const { data } = await axiosInstance(options);
+      setMovie(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <MoviesContext.Provider
       value={{
+        movie,
         movies,
-        readMovies
+        readMovies,
+        readMovie
       }}
     >
       {children}

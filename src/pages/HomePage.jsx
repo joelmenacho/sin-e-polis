@@ -7,12 +7,14 @@ const HomePage = () => {
 
   console.log(process.env.REACT_APP_TMDB_API_TOKEN);
   useEffect(() => {
+    document.title = '¡Bienvenidos! I Sin E Spoiler';
     readMovies();
     // eslint-disable-next-line
   }, []);
 
   return (
     <HomeHero movies={movies} />
+    
   );
 };
 

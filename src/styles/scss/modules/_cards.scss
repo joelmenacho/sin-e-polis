@@ -1,16 +1,76 @@
 .card {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-  
-    &__title {
-      font-size: 2rem;
-      font-weight: 900;
-      margin: 0;
-    }
-  
-    &__text {
-      margin: 0;
+  @include d-flex-fd-ai-jc-g(column, flex-start);
+  gap: 1rem;
+  max-width: 512px;
+  margin: 0 auto;
+
+  &--hero {
+    max-width: 400px;
+
+    @include desktop {
+      max-width: 768px;
     }
   }
+
+  &__body {
+    @include d-flex-fd-ai-jc-g(column, stretch, flex-start, 1rem);
+    background-color: var(--secondary-theme-color);
+    padding: 1rem;
+
+    &--movie {
+      position: relative;
+      box-shadow: 1rem 1rem 0 0 var(--primary-highlight-color);
+      transition: box-shadow 0.25s;
+
+      &:hover {
+        box-shadow: -1rem -1rem 0 0 var(--secondary-highlight-color);
+      }
+
+      @include desktop {
+        padding: 2rem;
+      }
+    }
+  }
+
+  &__img {
+    align-self: center;
+    width: 256px;
+    height: 384px;
+    object-fit: cover;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin: 0;
+
+    @include desktop {
+      font-size: 1.75rem;
+    }
+
+    &--hero {
+      font-size: 2rem;
+
+      @include desktop {
+        font-size: 3rem;
+      }
+    }
+  }
+
+  &__text {
+    font-size: 0.875rem;
+    margin: 0;
+
+    @include desktop {
+      font-size: 1rem;
+    }
+
+    &--hero {
+      font-size: 1rem;
+
+      @include desktop {
+        font-size: 1.125rem;
+      }
+    }
+  }
+}
